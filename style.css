@@ -1,0 +1,57 @@
+body {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.cards {
+  display: flex;
+  gap: 5px;
+margin: 3px solid red;
+}
+
+.cards .flip-card{
+  background-color: transparent;
+  width: 300px;
+  height: 250px;
+  border-radius: 15px ;
+  padding: 5px;
+  perspective: 500px;
+}
+
+.cards .flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.9s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.cards .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.cards .flip-card .flip-card-front,
+.cards .flip-card .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cards .flip-card .flip-card-front {
+  background-color: cadetblue;
+  color: blue;
+}
+
+.cards .flip-card .flip-card-front img {
+  width: 100%;
+  height: 100%;
+}
+
+.cards .flip-card .flip-card-back {
+  background-color: rgb(100, 22, 35);
+  color: wheat;
+  transform: rotateY(180deg);
+}
